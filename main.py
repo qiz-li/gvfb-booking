@@ -177,9 +177,9 @@ def main():
     shifts_url = (
         'https://app.betterimpact.com/Volunteer/Schedule/'
         'OpportunityDetails?guid=857823bf-2f37-447e-a841-a73e446aa916')
-    print(parse_response(book_shifts(client,
-                                     *get_ids(config, client, shifts_url))))
+    return(parse_response(book_shifts(client,
+                                      *get_ids(config, client, shifts_url))))
 
 
 if __name__ == "__main__":
-    main()
+    print(main())
