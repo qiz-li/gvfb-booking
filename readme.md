@@ -2,10 +2,9 @@
 
 An oddly specific automated shift booking script for the Greater Vancouver Food Bank,
 which allows people (mainly me) to register for shifts before they become full.
-
 This can also probably be tweaked to work with other organizations on the Better Impact volunteer platform.
 
-There are a few options to specify to configure:
+A few options to configure:
 
 ```yaml
 ---
@@ -39,8 +38,8 @@ Entries of human readable weekday names that you want to book shifts on (e.g. `t
 
 Under each entry, you can specify a list of shift times to book. Possible options are:
 
-- **`912`** _(9 AM - 12 PM)_
+- **`912`** (9 AM - 12 PM)
 
-- **`14`** _(1 PM - 4 PM)_
+- **`14`** (1 PM - 4 PM)
 
-- **`58`** _(5 PM - 8 PM)_
+- **`58`** (5 PM - 8 PM)
