@@ -1,0 +1,14 @@
+---
+# Better impact user credentials
+username: changeme
+password: changeme
+
+# Shifts to book (more details in README (soon?))
+time:
+  tuesday: 912
+  wednesday:
+    - 912
+    - 14
+  friday:
+    - 14
+    - 58
