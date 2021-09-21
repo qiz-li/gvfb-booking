@@ -102,6 +102,20 @@ def get_ids(config, client, shifts_url):
     activity_id = shifts_page.find(
         'input', {'name': 'activityId'})['value']
 
+    # This is needed to also include shifts,
+    # that are more than two weeks away.
+    expand_headers = {'X-Requested-With': 'XMLHttpRequest'}
+    expand_data = {'FilterModel.ActivityId': activity_id,
+                   'FilterModel.OrganizationMemberId': member_id}
+    expand_url = (
+        "https://app.betterimpact.com/Volunteer/"
+        "Schedule/OpportunitiyDetailsGetShifts")
+    shifts_page = BeautifulSoup(
+        client.get(shifts_url).content +
+        client.post(expand_url, headers=expand_headers,
+                    data=expand_data).content,
+        features='html.parser')
+
     shift_ids = []
     # Find the shift ID using the shift name
     for date, shift_times in config['time'].items():
